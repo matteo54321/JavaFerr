@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class L5E4{
+     
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+     
+        System.out.print("Inserire una stringa: ");
+        String s = in.next().toUpperCase();
+         
+        System.out.print("Inserire una chiave: ");
+        int key = in.nextInt();
+         
+        String res = "";
+         
+        for (int i=0; i < s.length(); i++){
+             
+            int n = ((int)(s.charAt(i)));
+             
+            int nC = (n+key);
+            if (nC > 90)
+                nC = nC - 26;
+            res = res + (char)(nC);
+        }
+         
+        System.out.println("Chiave codificata: " + res);
+    }
+}
